@@ -1,0 +1,46 @@
+<section id="dados-basicos">
+  <fieldset>
+    <legend>{{pokemonObj.name | uppercase}}</legend>
+      <div class="row">
+        <div class="card col-lg-3">
+          <img src="{{pokemonObj.sprites?.front_default }}" class="card-img-top" alt="{{pokemonObj.name}}">
+        </div>
+        <div class="card col-lg-3">
+          <img src="{{pokemonObj.sprites?.back_default }}" class="card-img-top" alt="{{pokemonObj.name}}">
+        </div>
+        <div class="card col-lg-3">
+          <img src="{{pokemonObj.sprites?.front_shiny }}" class="card-img-top" alt="{{pokemonObj.name}}">
+        </div>
+        <div class="card col-lg-3">
+          <img src="{{pokemonObj.sprites?.back_shiny }}" class="card-img-top" alt="{{pokemonObj.name}}">
+        </div>
+      </div>
+  </fieldset>
+</section>
+<hr>
+<section id="dados basicos">
+  <div class="row">
+    <div class="col-lg-1">
+      <label>Height</label>
+    </div>
+    <div class="col-lg-2">
+      <b>{{pokemonObj.height}}</b>
+    </div>
+    <div class="col-lg-1">
+      <label style="font-size: 12px;">Base Experience</label>
+    </div>
+    <div class="col-lg-2">
+      <b>{{pokemonObj.base_experience}}</b>
+    </div>
+  </div>
+</section>
+<hr>
+<section id="abilities">
+  <div class="row">
+    <div *ngFor="let ability of pokemonObj.abilities" class="col-lg-4">
+      <span class="badge rounded-pill bg-info">{{ability.slot}}</span>
+      <span class="text-danger col-lg-1">{{ability.ability?.name}}</span><br>
+      <span class="text-primary col-lg-1">{{ability.ability?.url}}</span>
+    </div>
+  </div>
+</section>

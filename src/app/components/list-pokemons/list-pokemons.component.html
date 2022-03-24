@@ -1,0 +1,11 @@
+<div class="row">
+  <div *ngFor="let pokemon of listPokemon$ | async; index as i" class="col-lg-4 mb-2">
+    <div class="card" style="width: 18rem;">
+      <img src="{{ urlSpriteFront }}/{{ i+1 }}.png" class="card-img-top" alt="{{ pokemon.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemon.name | uppercase}}</h5>
+        <a routerLink="/pokemon/{{ pokemon.name }}" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  </div>
+</div>
